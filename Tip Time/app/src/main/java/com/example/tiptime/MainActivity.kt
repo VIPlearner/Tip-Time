@@ -6,7 +6,7 @@ import com.example.tiptime.databinding.ActivityMainBinding
 import java.text.NumberFormat
 
 class MainActivity : AppCompatActivity() {
-    lateinit var binding: ActivityMainBinding
+    private lateinit var binding: ActivityMainBinding
 
     override fun onCreate(savedInstanceState: Bundle?) {
         super.onCreate(savedInstanceState)
@@ -26,7 +26,7 @@ class MainActivity : AppCompatActivity() {
             else -> 0.15
         }
 
-        var tip = tipPercentage * cost!!
+        var tip = tipPercentage * cost
         if (binding.tipRounding.isChecked){
             tip = kotlin.math.ceil(tip)
         }
